@@ -3,6 +3,7 @@ import axios from "axios";
 import { Route, Link, Routes } from "react-router-dom";
 import { useState, useEffect } from "react";
 import SignUp from './Components/SignUp/SignUp';
+import Header from './Components/Header/Header';
 
 function App() {
   
@@ -51,6 +52,7 @@ function App() {
 
   return (
     <div className="App">
+      <Header />
       <SignUp newUser={newUser} handleFormChange={handleFormChange} handleFormSubmit={handleFormSubmit}/>
     </div>
   );
