@@ -1,9 +1,10 @@
 import React from "react";
+import AddTopFive from "../AddTopFive/AddTopFive";
 
 const Home = () => {
   return (
     <div>
-      Home page
+      <AddTopFive />
     </div>
   );
 };

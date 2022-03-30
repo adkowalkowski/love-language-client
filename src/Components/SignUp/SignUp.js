@@ -6,15 +6,62 @@ import Modal from "react-bootstrap/Modal";
 import { useState, useEffect } from "react";
 import { Formik } from "formik";
 import * as yup from "yup";
+import axios from "axios";
 
-const SignUp = ({ newUser, handleFormChange, handleFormSubmit }) => {
+const SignUp = () => {
+  
+  // STATE FOR NEW USER SIGN UP
+
+  const [newUser, setNewUser] = useState({
+    email: "",
+    password: "",
+  })
+
+  // HANDLERS FOR POST
+
+  const handleFormChange = (e) => {
+    e.preventDefault();
+    e.persist();
+    setNewUser((prevUser) => {
+      const editedUser = {
+        ...prevUser,
+        [e.target.name]: e.target.value,
+      };
+      return editedUser;
+    });
+  };
+
+
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    const userData = {
+      email: newUser.email,
+      password: newUser.password
+    };
+    axios
+      .post("http://127.0.0.1:8000/sign-up/", userData)
+      .then((response) => {
+        console.log(response.data);
+        setNewUser(response.data);
+        console.log(newUser);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+  
   // STATE FOR SIGN UP BUTTON
+
   const [show, setShow] = useState(false);
+
+  // STATE FOR MODAL
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
   // FORM VALIDATION WITH FORMIK
+
   const schema = yup.object().shape({
     email: yup.string().email("Invalid email").required("Required"),
     password: yup.string().required(),

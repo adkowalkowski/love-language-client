@@ -10,7 +10,6 @@ import SignUp from "../SignUp/SignUp";
 
 const Header = () => {
   return (
-    // <BrowserRouter>
       <div>
         <Navbar bg="dark" variant="dark">
           <Container>
@@ -33,7 +32,6 @@ const Header = () => {
           </Routes>
         </div>
       </div>
-    // </BrowserRouter>
   );
 };
 
