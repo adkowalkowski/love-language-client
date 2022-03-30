@@ -48,6 +48,7 @@ const AddTopFive = () => {
         <option value="3">Receiving Gifts</option>
         <option value="3">Physical Touch</option>
       </Form.Select>
+      <button onClick={console.log(localStorage.token)}></button>
     </div>
   );
 };
