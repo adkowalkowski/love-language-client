@@ -17,8 +17,6 @@ const SignIn = () => {
     password: "",
   })
 
-  const [token, setToken] = useState('')
-
   // HANDLERS FOR POST
 
   const handleFormChange = (e) => {
