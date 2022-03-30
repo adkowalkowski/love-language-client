@@ -52,30 +52,13 @@ const SignIn = () => {
       });
   };
 
-
-  
-  // STATE FOR SIGN UP BUTTON
-
-  const [show, setShow] = useState(false);
-
-  // STATE FOR MODAL
-
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
-
-  // FORM VALIDATION WITH FORMIK
+  // FORM VALIDATION WITH FORMIK (NOT CURRENTLY IMPLEMENTED)
 
   const schema = yup.object().shape({
     email: yup.string().email("Invalid email").required("Required"),
     password: yup.string().required(),
   });
 
-//   if (user) {
-//       return <div>
-//           {user.email} is logged in
-//           </div>
-      
-//   }
 
   return (
     <Formik
