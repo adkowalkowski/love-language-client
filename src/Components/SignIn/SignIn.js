@@ -56,21 +56,22 @@ const SignIn = () => {
   const tokenSignOut = localStorage.token
   console.log(tokenSignOut)
 
-
-  // SIGN OUT 
+  // SIGN OUT
   const handleSignOut = () => {
-      axios
-        .delete("http://127.0.0.1:8000/sign-out/", {
-            headers: {
-                Authorization: `Token ${tokenSignOut}`,
-              },
-        }).then((res) => {
-            setUser(res.data);
-            localStorage.setItem('token', '')
-            console.log(localStorage)
-            console.log(res.data)
-          });
-  }
+    axios
+      .delete("http://127.0.0.1:8000/sign-out/", {
+        headers: {
+          Authorization: `Token ${tokenSignOut}`,
+        },
+      })
+      .then((res) => {
+        setUser(res.data);
+        localStorage.setItem("token", "");
+        console.log(localStorage);
+        console.log(res.data);
+      });
+  };
+
 
   // FORM VALIDATION WITH FORMIK (NOT CURRENTLY IMPLEMENTED)
 
@@ -135,10 +136,11 @@ const SignIn = () => {
           <Button variant="primary" type="submit">
             Sign In
           </Button>
+          <br></br>
+          <br></br>
           <Button variant="primary" onClick={handleSignOut}>
             Sign Out
           </Button>
-          
         </Form>
       )}
     </Formik>
@@ -146,3 +148,10 @@ const SignIn = () => {
 };
 
 export default SignIn;
+
+
+// PSEUDOCODE FOR SEARCH FEATURE
+// set state for email and setEmail as an empty string
+// have a handle change that stores the typed email into this state
+// in a handleSubmit, take that email and do a get request like the sign in, so it returns the user's id
+// 

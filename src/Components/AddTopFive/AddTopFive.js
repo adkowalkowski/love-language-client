@@ -9,7 +9,6 @@ import { Card } from "react-bootstrap";
 import { ListGroup } from "react-bootstrap";
 
 const AddTopFive = () => {
-  // CONDITIONAL RENDERING COULD BE if (!token) render SignIn page if(token) render AddTopFive
 
   // STORING TOKEN FROM SIGN IN TO A VARIABLE
   const token = localStorage.token;
@@ -123,6 +122,8 @@ const AddTopFive = () => {
       </Card>
     </div>
   ));
+
+  // CONDITIONAL RENDERING IF A USER IS/IS NOT SIGNED IN 
 
   if (!token) {
     return (
