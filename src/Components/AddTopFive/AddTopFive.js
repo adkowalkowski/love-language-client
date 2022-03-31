@@ -12,7 +12,6 @@ const AddTopFive = () => {
   // CONDITIONAL RENDERING COULD BE if (!token) render SignIn page if(token) render AddTopFive
 
   // STORING TOKEN FROM SIGN IN TO A VARIABLE
-
   const token = localStorage.token;
   console.log(token);
 
@@ -126,7 +125,12 @@ const AddTopFive = () => {
   ));
 
   if (!token) {
-    return <SignIn />;
+    return (
+      <div className="not-signed-in">
+          <p>You are not currently signed in. To add, view, or edit your top 5, please sign in</p>
+        <SignIn />
+      </div>
+    );
   }
 
   if (token) {

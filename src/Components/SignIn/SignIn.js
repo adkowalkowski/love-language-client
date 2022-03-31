@@ -46,11 +46,31 @@ const SignIn = () => {
         localStorage.setItem('token', response.data.user.token)
         console.log(localStorage)
         console.log(user)
+        window.location.reload(true)
       })
       .catch((err) => {
         console.log(err);
       });
   };
+
+  const tokenSignOut = localStorage.token
+  console.log(tokenSignOut)
+
+
+  // SIGN OUT 
+  const handleSignOut = () => {
+      axios
+        .delete("http://127.0.0.1:8000/sign-out/", {
+            headers: {
+                Authorization: `Token ${tokenSignOut}`,
+              },
+        }).then((res) => {
+            setUser(res.data);
+            localStorage.setItem('token', '')
+            console.log(localStorage)
+            console.log(res.data)
+          });
+  }
 
   // FORM VALIDATION WITH FORMIK (NOT CURRENTLY IMPLEMENTED)
 
@@ -114,6 +134,9 @@ const SignIn = () => {
          
           <Button variant="primary" type="submit">
             Sign In
+          </Button>
+          <Button variant="primary" onClick={handleSignOut}>
+            Sign Out
           </Button>
           
         </Form>
