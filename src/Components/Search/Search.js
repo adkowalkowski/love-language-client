@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 import Button from "react-bootstrap/Button";
 import { Card } from "react-bootstrap";
 import { ListGroup } from "react-bootstrap";
+import './Search.css'
 
 
 const Search = () => {
@@ -22,11 +23,7 @@ const Search = () => {
   }
   const handleSubmit = () => {
     axios
-      .get(`http://127.0.0.1:8000/love-languages/${email}`, {
-        headers: {
-          Authorization: `Token ${token}`,
-        },
-      })
+      .get(`http://127.0.0.1:8000/love-languages/${email}`)
       .then((res) => {
         console.log(res.data)
         setEmailTopFive(res.data);       
@@ -58,8 +55,8 @@ const Search = () => {
           <Form.Label>SEARCH THE LOVE LANGUAGE DIRECTORY</Form.Label>
           <Form.Control type="email" placeholder="Enter an email address" onChange={handleChange}/>
         </Form.Group>
-        <Button variant="primary" type="submit">
-          Submit
+        <Button variant="secondary" type="submit">
+          Search
         </Button>
         {emailTopFiveList}
       </Form>

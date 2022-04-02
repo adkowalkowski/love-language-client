@@ -5,11 +5,11 @@ import SignIn from "../SignIn/SignIn";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import Button from "react-bootstrap/Button";
+import Modal from "react-bootstrap/Modal";
 import { Card } from "react-bootstrap";
 import { ListGroup } from "react-bootstrap";
 
 const AddTopFive = () => {
-
   // STORING TOKEN FROM SIGN IN TO A VARIABLE
   const token = localStorage.token;
   console.log(token);
@@ -22,9 +22,20 @@ const AddTopFive = () => {
   const [four, setFour] = useState("");
   const [five, setFive] = useState("");
 
+  // STATE FOR DELETE
+  const [deletedUser, setDeleteUser] = useState()
+
   // STATE FOR RENDERING DATA
 
   const [topFive, setTopFive] = useState([]);
+
+  // STATE FOR SIGN UP BUTTON
+  const [show, setShow] = useState(false);
+
+  // STATE FOR MODAL
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   // HANDLESELECT FOR POSTING A USER'S TOP 5
 
@@ -62,6 +73,14 @@ const AddTopFive = () => {
     const selectedValue = e.target.value;
     setFive(selectedValue);
   };
+
+  // HANDLER FOR DELETE LOVE MODEL 
+  const handleChange = (e) => {
+    e.persist();
+    const editedDeleteUser = e.target.value;
+    setDeleteUser(editedDeleteUser)
+  }
+
 
   // POST REQUEST FOR ADDING TOP 5 TO A USER'S ACCOUNT
 
@@ -103,6 +122,19 @@ const AddTopFive = () => {
       })
       .then((res) => {
         setTopFive(res.data);
+        console.log(res.data)
+      });
+  };
+
+  // DELETE REQUEST FOR DELETING A SIGNED IN USER'S TOP 5
+  const handleSubmit = () => {
+    axios
+      .delete(`http://127.0.0.1:8000/love-languages/${deletedUser}`)
+      .then((res) => {
+        console.log(res.data)
+        setTopFive(res.data);    
+        alert("Your top 5 was deleted")   
+        
       });
   };
 
@@ -118,17 +150,48 @@ const AddTopFive = () => {
           <ListGroup.Item>3. {item.three}</ListGroup.Item>
           <ListGroup.Item>4. {item.four}</ListGroup.Item>
           <ListGroup.Item>5. {item.five}</ListGroup.Item>
+          <ListGroup.Item className="top-five">
+            <Button variant="primary" onClick={handleShow}>
+              Delete Your Top 5
+            </Button>
+          </ListGroup.Item>
         </ListGroup>
       </Card>
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Delete Your Top 5?</Modal.Title>
+        </Modal.Header>
+        <Form className='email-form-content'>
+          <Form.Group>
+            <Form.Control 
+              type="email"
+              name="email"
+              value={deletedUser}
+              onChange={handleChange}
+              // isInvalid={!!errors.email}
+              placeholder="Enter your email to confirm"
+              required
+            />
+          </Form.Group>
+        </Form>
+        <Modal.Footer>
+          <Button variant="danger" onClick={handleSubmit}>
+            Delete
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </div>
   ));
 
-  // CONDITIONAL RENDERING IF A USER IS/IS NOT SIGNED IN 
+  // CONDITIONAL RENDERING IF A USER IS/IS NOT SIGNED IN
 
   if (!token) {
     return (
       <div className="not-signed-in">
-          <p>You are not currently signed in. To add, view, or edit your top 5, please sign in</p>
+        <p>
+          You are not currently signed in. To add, view, or edit your top 5,
+          please sign in
+        </p>
         <SignIn />
       </div>
     );
@@ -137,7 +200,7 @@ const AddTopFive = () => {
   if (token) {
     return (
       // FORM FOR SIGNED IN USER TO ADD THEIR TOP 5
-
+      
       <div className="top-five-form">
         <Form onSubmit={handleTopFiveSubmit}>
           <Form.Select

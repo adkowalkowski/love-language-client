@@ -1,5 +1,42 @@
-.top-five-form {
-    margin-top: 10%;
-    margin-left: 25%;
-    margin-right: 25%;
+.top-five-container {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
 }
+
+.card {
+    margin: 0 auto;
+}
+
+Form {
+    margin-top: 5%;
+    margin-right: 25%; 
+    margin-bottom: 5%;
+  }
+
+
+.email-form-content {
+    margin-top: 5%;
+    margin-bottom: 5%;
+    /* margin: 0 auto; */
+} 
+
+.btn.btn-danger {
+    margin: 0 auto;
+}
+
+/* 
+input.form-control {
+    display: flex;
+    align-self: flex-start;
+}  */
+
+/* .modal-content {
+    display: flex;
+    align-self: flex-start;
+}
+
+
+
+
+/* do a media query for the .email-form content  */
