@@ -1,5 +1,6 @@
 import React from "react";
 import Form from "react-bootstrap/Form";
+import { Alert } from "react-bootstrap";
 import "./AddTopFive.css";
 import SignIn from "../SignIn/SignIn";
 import axios from "axios";
@@ -193,9 +194,9 @@ const AddTopFive = () => {
   if (!token) {
     return (
       <div className="not-signed-in">
-        <p>
-          You are not currently signed in. To view your profile, sign in
-        </p>
+        <Alert variant="danger" onClose={() => setShow(false)} >
+        <Alert.Heading>Sign in to view your profile</Alert.Heading>
+      </Alert>
         <SignIn />
       </div>
     );

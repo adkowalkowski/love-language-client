@@ -26,7 +26,7 @@
 /* // without background image */
 .search-form {
     position: relative;
-    font-family: 'Big Shoulders Text', cursive;
+    /* font-family: 'Big Shoulders Text', cursive; */
     letter-spacing: 1px;
     text-align: center;
    z-index: 1;
@@ -35,7 +35,7 @@
 
 .top-five-container {
     position: relative;
-    font-family: 'Big Shoulders Text', cursive;
+    /* font-family: 'Big Shoulders Text', cursive; */
     letter-spacing: 1px;
     text-align: center;
     max-width: 100%;

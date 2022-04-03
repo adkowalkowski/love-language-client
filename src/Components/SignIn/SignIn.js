@@ -85,6 +85,7 @@ const SignIn = () => {
 
   return (
     <Formik
+      className='sign-in-form'
       validationSchema={schema}
       onSubmit={console.log}
       initialValues={{

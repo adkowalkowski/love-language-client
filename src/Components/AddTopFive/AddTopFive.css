@@ -1,3 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Text:wght@100;200;300;400;500;600;700;800&display=swap');
+
+
+.not-signed-in p {
+    position: relative;
+    font-family: 'Big Shoulders Text', cursive;
+    letter-spacing: 1px;
+    text-align: center;
+    margin-top: 2%;
+    font-size: 20px;
+}
+
 .top-five-form {
     margin: 0 auto; 
     max-width: 50%; 
