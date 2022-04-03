@@ -21,6 +21,7 @@ a.nav-link {
     border-radius: 10px; 
     border-color: black;
     margin-left: 10px;
+    font-weight: bold;
 }
 
 .btn.btn-secondary.btn-sm:hover {
