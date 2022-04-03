@@ -25,7 +25,7 @@ const AddTopFive = () => {
   const [five, setFive] = useState("");
 
   // STATE FOR DELETE
-  const [deletedUser, setDeleteUser] = useState()
+  const [pk, setPk] = useState('')
 
   // STATE FOR RENDERING DATA
 
@@ -77,11 +77,11 @@ const AddTopFive = () => {
   };
 
   // HANDLER FOR DELETE LOVE MODEL 
-  const handleChange = (e) => {
-    e.persist();
-    const editedDeleteUser = e.target.value;
-    setDeleteUser(editedDeleteUser)
-  }
+  // const handleChange = (e) => {
+  //   e.persist();
+  //   const editedDeleteUser = e.target.value;
+  //   setDeleteUser(editedDeleteUser)
+  // }
 
 
   // POST REQUEST FOR ADDING TOP 5 TO A USER'S ACCOUNT
@@ -107,6 +107,7 @@ const AddTopFive = () => {
         setFour(response.data.four);
         setFive(response.data.five);
         console.log(response.data);
+        alert('Your top 5 has been added to the directory')
       })
       .catch((err) => {
         console.log(err);
@@ -124,17 +125,23 @@ const AddTopFive = () => {
       })
       .then((res) => {
         setTopFive(res.data);
-        console.log(res.data)
+        setPk(res.data[0].id)
+        console.log(pk)
       });
   };
 
   // DELETE REQUEST FOR DELETING A SIGNED IN USER'S TOP 5
   const handleSubmit = () => {
     axios
-      .delete(`http://127.0.0.1:8000/love-languages/${deletedUser}`)
+      .delete(`http://127.0.0.1:8000/love-languages/modify/${pk}`, {
+        headers: {
+          Authorization: `Token ${token}`,
+        }
+      })
       .then((res) => {
         console.log(res.data)
-        setTopFive(res.data);    
+        // setTopFive(res.data);   
+        window.location.reload(true) 
         alert("Your top 5 was deleted")   
         
       });
@@ -166,20 +173,6 @@ const AddTopFive = () => {
         <Modal.Header closeButton>
           <Modal.Title>Delete Your Top 5?</Modal.Title>
         </Modal.Header>
-        <Form className='email-form-content'>
-          <Form.Group>
-            <Form.Control 
-              className="delete-input-field"
-              type="email"
-              name="email"
-              value={deletedUser}
-              onChange={handleChange}
-              // isInvalid={!!errors.email}
-              placeholder="Enter your email to confirm"
-              required
-            />
-          </Form.Group>
-        </Form>
         <Modal.Footer>
           <Button className="final-delete-button" variant="danger" onClick={handleSubmit}>
             Delete
