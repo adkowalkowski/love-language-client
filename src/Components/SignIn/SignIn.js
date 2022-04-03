@@ -46,7 +46,7 @@ const SignIn = () => {
         localStorage.setItem('token', response.data.user.token)
         console.log(localStorage)
         console.log(user)
-        alert('You are signed in')
+        // alert('You are signed in')
         window.location.reload(true)
       })
       .catch((err) => {
@@ -70,6 +70,7 @@ const SignIn = () => {
         localStorage.setItem("token", "");
         console.log(localStorage);
         console.log(res.data);
+        window.location.reload(true)
       });
   };
 

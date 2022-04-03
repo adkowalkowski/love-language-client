@@ -56,7 +56,7 @@ const Search = () => {
       <Form className='search-form' onSubmit={handleSubmit}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Enter an email to search the Love Language Directory</Form.Label>
-          <Form.Control type="email" placeholder="Enter an email address" onChange={handleChange}/>
+          <Form.Control className='email-control' type="email" placeholder="Enter an email address" onChange={handleChange}/>
         </Form.Group>
         <Button className="search-button" variant="secondary" type="submit">
           Search

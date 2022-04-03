@@ -16,6 +16,43 @@ const Header = () => {
   const token = localStorage.token
   console.log(token)
 
+  if (token != '') {
+    return (
+      <div>
+        <Navbar sticky="top" bg="white">
+        <Container>
+          <Nav >
+            <Nav.Link as={Link} to="/">
+              Home
+            </Nav.Link>
+            <Nav.Link as={Link} to="/about">
+              About
+            </Nav.Link>
+            <Nav.Link as={Link} to="/profile">
+              Profile
+            </Nav.Link>
+          </Nav>
+          <Nav>
+            <Nav.Link as={Link} to="/sign-in">
+              Sign Out
+            </Nav.Link>
+           
+          </Nav>
+        </Container>
+        <hr></hr>
+      </Navbar>
+      <div>
+        <Routes>
+          <Route path="/" element={<Home />}></Route>
+          <Route path="/about" element={<About />}></Route>
+          <Route path="/profile" element={<AddTopFive />}></Route>
+          <Route path="/sign-in" element={<SignIn />}></Route>
+          <Route path="/sign-up" element={<SignUp />}></Route>
+        </Routes>
+      </div>
+      </div>
+    )
+  } 
   return (
     <div>
       <Navbar sticky="top" bg="white">
