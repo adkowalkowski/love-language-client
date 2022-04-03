@@ -1,7 +1,22 @@
+html {
+  background-color: #F4F4F4;
+}
+
 .App {
   text-align: center;
-
+  margin: 0 auto; 
+  background-color: #F4F4F4;
 }
+
+div.card {
+  display: flex; 
+  align-self: center;
+  margin-left: auto; 
+  margin-right: auto;  
+  margin-top: 2%; 
+  max-width: 100%;
+}
+
 
 .App-logo {
   height: 40vmin;

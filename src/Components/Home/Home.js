@@ -1,11 +1,11 @@
 import React from "react";
 import AddTopFive from "../AddTopFive/AddTopFive";
-import SignIn from "../SignIn/SignIn";
+import Search from "../Search/Search";
 
 const Home = () => {
   return (
     <div>
-      <AddTopFive />
+      <Search />
     </div>
   );
 };

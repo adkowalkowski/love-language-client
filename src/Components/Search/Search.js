@@ -7,7 +7,7 @@ import Button from "react-bootstrap/Button";
 import { Card } from "react-bootstrap";
 import { ListGroup } from "react-bootstrap";
 import './Search.css'
-
+// import '../../App.css'
 
 const Search = () => {
   const [email, setEmail] = useState('');
@@ -48,19 +48,26 @@ const Search = () => {
     </div>
   ));
 
+  
+
   return (
-    <div>
-      <Form onSubmit={handleSubmit}>
+    <div className='test'>
+      <div className='landing-page-logo'><h1>Love <br></br>Language <br></br>Directory</h1></div>
+      <Form className='search-form' onSubmit={handleSubmit}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label>SEARCH THE LOVE LANGUAGE DIRECTORY</Form.Label>
+          <Form.Label>Enter an email to search the Love Language Directory</Form.Label>
           <Form.Control type="email" placeholder="Enter an email address" onChange={handleChange}/>
         </Form.Group>
-        <Button variant="secondary" type="submit">
+        <Button className="search-button" variant="secondary" type="submit">
           Search
         </Button>
         {emailTopFiveList}
       </Form>
+      <img className="landing-photo" src={require("../../assets/love_landing_page.png")} alt={"Love Language Landing Page Photo"}/>
     </div> 
+   
+      
+    
   );
 };
 

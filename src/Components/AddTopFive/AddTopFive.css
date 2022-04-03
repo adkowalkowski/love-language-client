@@ -1,42 +1,57 @@
-.top-five-container {
-    margin: auto;
-    width: 50%;
-    padding: 10px;
+.top-five-form {
+    margin: 0 auto; 
+    max-width: 50%; 
+    margin-bottom: 5%; 
 }
 
-.card {
-    margin: 0 auto;
-}
-
-Form {
-    margin-top: 5%;
-    margin-right: 25%; 
+.form-select {
     margin-bottom: 5%;
-  }
+}
 
+.submit-button.btn.btn-secondary {
+    background-color: black;
+    border-radius: 10px; 
+    border-color: black;
+    margin-bottom: 3%; 
+}
 
-.email-form-content {
+.submit-button.btn.btn-secondary:hover {
+    background-color: #f43c6a;
+    border-color: #f43c6a;
+    opacity: 90%;
+}
+
+.top-five-button.btn.btn-secondary {
+    background-color: black;
+    border-radius: 10px; 
+    border-color: black;
+    margin-bottom: 3%; 
+}
+
+.top-five-button.btn.btn-secondary:hover {
+    background-color: #f43c6a;
+    border-color: #f43c6a;
+    opacity: 90%;
+}
+
+.delete-button.btn.btn-danger.btm-sm {
+    display: none; 
+}
+
+.edit-button {
     margin-top: 5%;
-    margin-bottom: 5%;
-    /* margin: 0 auto; */
-} 
-
-.btn.btn-danger {
-    margin: 0 auto;
+    margin-right: 2%; 
+    margin-bottom: 5%; 
 }
 
-/* 
-input.form-control {
-    display: flex;
-    align-self: flex-start;
-}  */
-
-/* .modal-content {
-    display: flex;
-    align-self: flex-start;
+.final-delete-button {
+    display: none;
 }
 
+.delete-input-field {
+    margin-bottom: 10%; 
+}
 
-
-
-/* do a media query for the .email-form content  */
+.menu-icon {
+    float: right;
+}

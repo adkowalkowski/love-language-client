@@ -137,9 +137,8 @@ const SignIn = () => {
           <Button variant="primary" type="submit">
             Sign In
           </Button>
-          <br></br>
-          <br></br>
-          <Button variant="primary" onClick={handleSignOut}>
+        
+          <Button className="sign-out" variant="primary" onClick={handleSignOut}>
             Sign Out
           </Button>
         </Form>

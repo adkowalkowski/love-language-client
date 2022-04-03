@@ -8,6 +8,7 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { Card } from "react-bootstrap";
 import { ListGroup } from "react-bootstrap";
+import { FiMoreHorizontal } from "react-icons/fi";
 
 const AddTopFive = () => {
   // STORING TOKEN FROM SIGN IN TO A VARIABLE
@@ -143,7 +144,7 @@ const AddTopFive = () => {
   const topFiveList = topFive.map((item) => (
     <div className="top-five-container">
       <Card style={{ width: "18rem" }}>
-        <Card.Header>Your Top 5</Card.Header>
+        <Card.Header>Your Top 5 <FiMoreHorizontal className="menu-icon"/> </Card.Header>
         <ListGroup variant="flush">
           <ListGroup.Item>1. {item.one}</ListGroup.Item>
           <ListGroup.Item>2. {item.two}</ListGroup.Item>
@@ -151,7 +152,10 @@ const AddTopFive = () => {
           <ListGroup.Item>4. {item.four}</ListGroup.Item>
           <ListGroup.Item>5. {item.five}</ListGroup.Item>
           <ListGroup.Item className="top-five">
-            <Button variant="primary" onClick={handleShow}>
+          <Button className="edit-button" variant="primary" size="sm" onClick={handleShow}>
+              Edit Your Top 5
+            </Button>
+            <Button className="delete-button" variant="danger" size="sm" onClick={handleShow}>
               Delete Your Top 5
             </Button>
           </ListGroup.Item>
@@ -164,6 +168,7 @@ const AddTopFive = () => {
         <Form className='email-form-content'>
           <Form.Group>
             <Form.Control 
+              className="delete-input-field"
               type="email"
               name="email"
               value={deletedUser}
@@ -175,7 +180,7 @@ const AddTopFive = () => {
           </Form.Group>
         </Form>
         <Modal.Footer>
-          <Button variant="danger" onClick={handleSubmit}>
+          <Button className="final-delete-button" variant="danger" onClick={handleSubmit}>
             Delete
           </Button>
         </Modal.Footer>
@@ -189,8 +194,7 @@ const AddTopFive = () => {
     return (
       <div className="not-signed-in">
         <p>
-          You are not currently signed in. To add, view, or edit your top 5,
-          please sign in
+          You are not currently signed in. To view your profile, sign in
         </p>
         <SignIn />
       </div>
@@ -203,6 +207,7 @@ const AddTopFive = () => {
       
       <div className="top-five-form">
         <Form onSubmit={handleTopFiveSubmit}>
+          <Form.Label>To add your top 5 love languages into our directory, fill out the form below</Form.Label>
           <Form.Select
             onChange={handleOneSelect}
             aria-label="Default select example"
@@ -258,7 +263,7 @@ const AddTopFive = () => {
             <option>Receiving Gifts</option>
             <option>Physical Touch</option>
           </Form.Select>
-          <Button variant="primary" type="submit">
+          <Button className="submit-button" variant="secondary" type="submit">
             Submit
           </Button>
         </Form>
@@ -266,7 +271,7 @@ const AddTopFive = () => {
         {/* // BUTTON TO VIEW A SIGNED IN USER'S TOP FIVE */}
 
         <div>
-          <Button variant="primary" onClick={handleGet}>
+          <Button className="top-five-button" variant="secondary" onClick={handleGet}>
             View Your Top 5
           </Button>
           {topFiveList}

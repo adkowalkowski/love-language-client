@@ -1,7 +1,45 @@
-.top-five-container {
-    display: flex;
-    justify-content: center;
-    margin-top: 2%; 
-    margin-left: -50%;
-    width: 200%;
+@import url('https://fonts.googleapis.com/css2?family=Mrs+Sheppards&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Notable&display=swap');
+
+.landing-photo {
+    position: relative;
+    float: right;
+    width: 75%;
+    margin-top: -10%;
+    margin-right: -3%;
+    z-index: 0;
+}
+
+.search-form {
+    position: absolute;
+   z-index: 1;
+   margin-top: 50%;
+   margin-left: 25px;
+   width: 60%;
+}
+
+.landing-page-logo {
+    font-family: 'Notable', sans-serif;    
+    color: black;
+    letter-spacing: 3px;
+    position: absolute;
+    text-align: left;
+    z-index: 1;
+    margin-top: 25%;
+    margin-left: 5%;
+    /* transform: rotate(-20deg); */
+}
+
+.search-button.btn.btn-secondary {
+    background-color: black;
+    border-radius: 10px; 
+    border-color: black;
+    margin-bottom: 3%;  
+}
+
+.search-button.btn.btn-secondary:hover {
+    background-color: #f43c6a;
+    border-color: #f43c6a;
+    opacity: 90%;
 }

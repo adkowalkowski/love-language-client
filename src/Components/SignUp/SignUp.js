@@ -119,7 +119,7 @@ const SignUp = () => {
             </Form.Control.Feedback>
           </Form.Group>
           <Button variant="primary" type="submit" onClick={handleShow}>
-            Sign Up
+            Register
           </Button>
 
           <Modal show={show} onHide={handleClose}>
