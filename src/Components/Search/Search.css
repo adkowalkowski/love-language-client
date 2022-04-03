@@ -25,17 +25,16 @@
 
 /* // without background image */
 .search-form {
-    position: absolute;
+    position: relative;
     font-family: 'Big Shoulders Text', cursive;
     letter-spacing: 1px;
     text-align: center;
    z-index: 1;
-   margin-top: 25%;
    max-width: 60%;
 }
 
 .top-five-container {
-    position: absolute;
+    position: relative;
     font-family: 'Big Shoulders Text', cursive;
     letter-spacing: 1px;
     text-align: center;
@@ -48,7 +47,7 @@
     font-family: 'Corben', cursive;
     color: black;
     letter-spacing: 3px;
-    position: absolute;
+    position: relative;
     text-align: center;
     z-index: 1;
     margin-top: 2%;
