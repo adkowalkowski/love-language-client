@@ -38,7 +38,9 @@
     /* font-family: 'Big Shoulders Text', cursive; */
     letter-spacing: 1px;
     text-align: center;
-    max-width: 100%;
+    margin: 0 auto; 
+    max-width: 100%; 
+    margin-bottom: 5%; 
 
 }
 

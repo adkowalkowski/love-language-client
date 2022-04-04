@@ -9,8 +9,6 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { Card } from "react-bootstrap";
 import { ListGroup } from "react-bootstrap";
-import { FiMoreHorizontal } from "react-icons/fi";
-import UpdateTopFive from "../UpdateTopFive/UpdateTopFive";
 
 const AddTopFive = () => {
   // STORING TOKEN FROM SIGN IN TO A VARIABLE
@@ -154,7 +152,7 @@ const AddTopFive = () => {
   const topFiveList = topFive.map((item) => (
     <div className="top-five-container">
       <Card style={{ width: "18rem" }}>
-        <Card.Header>Your Top 5 <FiMoreHorizontal className="menu-icon"/> </Card.Header>
+        <Card.Header>Your Top 5</Card.Header>
         <ListGroup variant="flush">
           <ListGroup.Item>1. {item.one}</ListGroup.Item>
           <ListGroup.Item>2. {item.two}</ListGroup.Item>
