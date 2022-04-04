@@ -1,6 +1,7 @@
 import React from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import { Alert } from "react-bootstrap";
 import "./SignUp.css";
 import Modal from "react-bootstrap/Modal";
 import { useState, useEffect } from "react";
@@ -71,7 +72,13 @@ const SignUp = () => {
   });
 
   return (
-    <Formik
+    <div>
+      <Alert variant="success" onClose={() => setShow(false)} >
+        <Alert.Heading>Please view our <a target="_blank" href="http://localhost:3000/?#/about">
+        frequently asked questions
+          </a> before continuing. <br></br>Register an account with the love language directory using the form below</Alert.Heading>
+      </Alert>
+<Formik
       validationSchema={schema}
       onSubmit={console.log}
       initialValues={{
@@ -144,6 +151,8 @@ const SignUp = () => {
         </Form>
       )}
     </Formik>
+    </div>
+    
   );
 };
 

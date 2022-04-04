@@ -126,7 +126,10 @@ const AddTopFive = () => {
         localStorage.setItem('pk', res.data[0].id)
         setPk(localStorage.pk)
         console.log(pk)
-      });
+      })
+      .catch((err) => {
+        alert('You have not submitted your top 5')
+      })
   };
 
   // DELETE REQUEST FOR DELETING A SIGNED IN USER'S TOP 5

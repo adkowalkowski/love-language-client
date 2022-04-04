@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Corben:wght@700&display=swap');
+
+.faq-header {
+    font-family: 'Corben', cursive;
+    color: black;
+    letter-spacing: 3px;
+    position: relative;
+    text-align: center;
+    margin-top: 2%;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.faq {
+    margin-top: 2%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+

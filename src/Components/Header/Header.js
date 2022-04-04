@@ -14,8 +14,12 @@ import UpdateTopFive from "../UpdateTopFive/UpdateTopFive";
 
 const Header = () => {
   
+  // STORING TOKEN FROM LOCALSTORAGE FOR CONDITIONAL RENDERING
+
   const token = localStorage.token
   console.log(token)
+
+  // NAVBAR IF A USER IS SIGNED IN
 
   if (token != '') {
     return (
@@ -55,6 +59,9 @@ const Header = () => {
       </div>
     )
   } 
+
+  // NAVBAR IF A USER IS NOT SIGNED IN
+
   return (
     <div>
       <Navbar sticky="top" bg="white">
