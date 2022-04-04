@@ -43,9 +43,12 @@ const SignUp = () => {
       .then((response) => {
         console.log(response.data);
         setNewUser(response.data);
+        alert('Your account has been created')
+        window.location.href = 'http://localhost:3000/?#/profile'
         console.log(newUser);
       })
       .catch((err) => {
+        alert('This email is already in use')
         console.log(err);
       });
   };
@@ -57,8 +60,8 @@ const SignUp = () => {
 
   // STATE FOR MODAL
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  // const handleClose = () => setShow(false);
+  // const handleShow = () => setShow(true);
 
   // FORM VALIDATION WITH FORMIK
 
@@ -118,11 +121,11 @@ const SignUp = () => {
               {errors.password}
             </Form.Control.Feedback>
           </Form.Group>
-          <Button variant="primary" type="submit" onClick={handleShow}>
+          <Button variant="primary" type="submit">
             Register
           </Button>
 
-          <Modal show={show} onHide={handleClose}>
+          {/* <Modal show={show} onHide={handleClose}>
             <Modal.Header closeButton>
               <Modal.Title>Sign Up Successful</Modal.Title>
             </Modal.Header>
@@ -134,7 +137,7 @@ const SignUp = () => {
                 Close
               </Button>
             </Modal.Footer>
-          </Modal>
+          </Modal> */}
           {/* <Button variant="primary" type="submit">
             Submit
           </Button> */}

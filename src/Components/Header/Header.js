@@ -10,6 +10,7 @@ import SignIn from "../SignIn/SignIn";
 import SignUp from "../SignUp/SignUp";
 import './Header.css'
 import AddTopFive from "../AddTopFive/AddTopFive";
+import UpdateTopFive from "../UpdateTopFive/UpdateTopFive";
 
 const Header = () => {
   
@@ -48,6 +49,7 @@ const Header = () => {
           <Route path="/profile" element={<AddTopFive />}></Route>
           <Route path="/sign-in" element={<SignIn />}></Route>
           <Route path="/sign-up" element={<SignUp />}></Route>
+          <Route path="/update-top-five" element={<UpdateTopFive />}></Route>
         </Routes>
       </div>
       </div>

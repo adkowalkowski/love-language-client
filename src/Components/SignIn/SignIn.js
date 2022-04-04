@@ -46,10 +46,10 @@ const SignIn = () => {
         localStorage.setItem('token', response.data.user.token)
         console.log(localStorage)
         console.log(user)
-        // alert('You are signed in')
         window.location.reload(true)
       })
       .catch((err) => {
+        alert('Incorrect login information')
         console.log(err);
       });
   };
@@ -150,10 +150,3 @@ const SignIn = () => {
 };
 
 export default SignIn;
-
-
-// PSEUDOCODE FOR SEARCH FEATURE
-// set state for email and setEmail as an empty string
-// have a handle change that stores the typed email into this state
-// in a handleSubmit, take that email and do a get request like the sign in, so it returns the user's id
-// 

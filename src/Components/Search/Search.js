@@ -27,7 +27,10 @@ const Search = () => {
       .then((res) => {
         console.log(res.data)
         setEmailTopFive(res.data);       
-        
+      })
+      .catch((err) => {
+        alert('This email does not exist in our directory')
+        console.log(err);
       });
   };
 

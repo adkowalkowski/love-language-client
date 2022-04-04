@@ -10,6 +10,7 @@ import Modal from "react-bootstrap/Modal";
 import { Card } from "react-bootstrap";
 import { ListGroup } from "react-bootstrap";
 import { FiMoreHorizontal } from "react-icons/fi";
+import UpdateTopFive from "../UpdateTopFive/UpdateTopFive";
 
 const AddTopFive = () => {
   // STORING TOKEN FROM SIGN IN TO A VARIABLE
@@ -76,13 +77,9 @@ const AddTopFive = () => {
     setFive(selectedValue);
   };
 
-  // HANDLER FOR DELETE LOVE MODEL 
-  // const handleChange = (e) => {
-  //   e.persist();
-  //   const editedDeleteUser = e.target.value;
-  //   setDeleteUser(editedDeleteUser)
-  // }
-
+  const handleUpdateClick = () => {
+    window.location.href = 'http://localhost:3000/?#/update-top-five'
+  }
 
   // POST REQUEST FOR ADDING TOP 5 TO A USER'S ACCOUNT
 
@@ -107,9 +104,10 @@ const AddTopFive = () => {
         setFour(response.data.four);
         setFive(response.data.five);
         console.log(response.data);
-        alert('Your top 5 has been added to the directory')
+        alert('Your top 5 has been added to the directory.')
       })
       .catch((err) => {
+        alert('You have already submitted your top 5. Click "View Your Top 5" to make changes.')
         console.log(err);
       });
   };
@@ -125,13 +123,15 @@ const AddTopFive = () => {
       })
       .then((res) => {
         setTopFive(res.data);
-        setPk(res.data[0].id)
+        localStorage.setItem('pk', res.data[0].id)
+        setPk(localStorage.pk)
         console.log(pk)
       });
   };
 
   // DELETE REQUEST FOR DELETING A SIGNED IN USER'S TOP 5
-  const handleSubmit = () => {
+
+  const handleDelete = () => {
     axios
       .delete(`http://127.0.0.1:8000/love-languages/modify/${pk}`, {
         headers: {
@@ -139,7 +139,6 @@ const AddTopFive = () => {
         }
       })
       .then((res) => {
-        console.log(res.data)
         // setTopFive(res.data);   
         window.location.reload(true) 
         alert("Your top 5 was deleted")   
@@ -160,7 +159,7 @@ const AddTopFive = () => {
           <ListGroup.Item>4. {item.four}</ListGroup.Item>
           <ListGroup.Item>5. {item.five}</ListGroup.Item>
           <ListGroup.Item className="top-five">
-          <Button className="edit-button" variant="primary" size="sm" onClick={handleShow}>
+          <Button className="edit-button" variant="primary" size="sm" onClick={handleUpdateClick}>
               Edit Your Top 5
             </Button>
             <Button className="delete-button" variant="danger" size="sm" onClick={handleShow}>
@@ -174,7 +173,7 @@ const AddTopFive = () => {
           <Modal.Title>Delete Your Top 5?</Modal.Title>
         </Modal.Header>
         <Modal.Footer>
-          <Button className="final-delete-button" variant="danger" onClick={handleSubmit}>
+          <Button className="final-delete-button" variant="danger" onClick={handleDelete}>
             Delete
           </Button>
         </Modal.Footer>
@@ -197,6 +196,7 @@ const AddTopFive = () => {
 
   if (token) {
     return (
+
       // FORM FOR SIGNED IN USER TO ADD THEIR TOP 5
       
       <div className="top-five-form">

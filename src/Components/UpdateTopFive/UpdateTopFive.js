@@ -1,7 +1,7 @@
 import React from "react";
 import Form from "react-bootstrap/Form";
 import { Alert } from "react-bootstrap";
-import "./AddTopFive.css";
+// import "./AddTopFive.css";
 import SignIn from "../SignIn/SignIn";
 import axios from "axios";
 import { useState, useEffect } from "react";
@@ -15,7 +15,12 @@ const UpdateTopFive = () => {
   const token = localStorage.token;
   console.log(token);
 
-  // STATES FOR ADDING A USER'S TOP 5
+  // STORING PRIMARY KEY FROM HANDLEGET ON ADDTOPFIVE TO A VARIABLE
+
+  const pk = localStorage.pk; 
+  console.log(pk)
+
+  // STATES FOR UPDATING A USER'S TOP 5
 
   const [one, setOne] = useState("");
   const [two, setTwo] = useState("");
@@ -23,15 +28,7 @@ const UpdateTopFive = () => {
   const [four, setFour] = useState("");
   const [five, setFive] = useState("");
 
-  // STATE FOR STORING PRIMARY KEY
-
-  const [pk, setPk] = useState("");
-
-  // STATE FOR RENDERING DATA
-
-  const [updateTopFive, setUpdateTopFive] = useState([]);
-
-  // HANDLESELECT FOR POSTING A USER'S TOP 5
+  // HANDLESELECT FOR UPDATING A USER'S TOP 5
 
   const handleOneSelect = (e) => {
     e.preventDefault();
@@ -79,7 +76,7 @@ const UpdateTopFive = () => {
       five: five,
     };
     axios
-      .post("http://127.0.0.1:8000/love-languages/", topFiveData, {
+      .put(`http://127.0.0.1:8000/love-languages/modify/${pk}`, topFiveData, {
         headers: {
           Authorization: `Token ${token}`,
         },
@@ -91,6 +88,7 @@ const UpdateTopFive = () => {
         setFour(response.data.four);
         setFive(response.data.five);
         console.log(response.data);
+        window.location.href = 'http://localhost:3000/?#/profile'
         alert("Your top 5 has been updated");
       })
       .catch((err) => {
@@ -98,30 +96,11 @@ const UpdateTopFive = () => {
       });
   };
 
-  // RENDERING DATA
-
-  const topFiveList = topFive.map((item) => (
-    <div className="top-five-container">
-      <Card style={{ width: "18rem" }}>
-        <Card.Header>
-          Your Top 5 <FiMoreHorizontal className="menu-icon" />{" "}
-        </Card.Header>
-        <ListGroup variant="flush">
-          <ListGroup.Item>1. {item.one}</ListGroup.Item>
-          <ListGroup.Item>2. {item.two}</ListGroup.Item>
-          <ListGroup.Item>3. {item.three}</ListGroup.Item>
-          <ListGroup.Item>4. {item.four}</ListGroup.Item>
-          <ListGroup.Item>5. {item.five}</ListGroup.Item>
-        </ListGroup>
-      </Card>
-    </div>
-  ));
-
   return (
     <div>
       <Form onSubmit={handleTopFiveSubmit}>
         <Form.Label>
-          To add your top 5 love languages into our directory, fill out the form
+          To edit your top 5 love languages, fill out the form
           below
         </Form.Label>
         <Form.Select
@@ -180,7 +159,7 @@ const UpdateTopFive = () => {
           <option>Physical Touch</option>
         </Form.Select>
         <Button className="submit-button" variant="secondary" type="submit">
-          Submit
+          Edit Your Top 5
         </Button>
       </Form>
     </div>
