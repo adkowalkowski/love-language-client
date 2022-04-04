@@ -74,9 +74,9 @@ const SignUp = () => {
   return (
     <div>
       <Alert variant="success" onClose={() => setShow(false)} >
-        <Alert.Heading>Please view our <a target="_blank" href="http://localhost:3000/?#/about">
+        <Alert.Heading>Please review our <a target="_blank" href="http://localhost:3000/?#/about">
         frequently asked questions
-          </a> before continuing. <br></br>Register an account with the love language directory using the form below</Alert.Heading>
+          </a> before continuing <br></br>Register an account with the love language directory using the form below</Alert.Heading>
       </Alert>
 <Formik
       validationSchema={schema}

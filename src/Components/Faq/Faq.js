@@ -6,7 +6,7 @@ const Faq = () => {
   return (
     <div className="faq">
       <h2 className='faq-header'>Frequently Asked Questions</h2>
-      <Accordion defaultActiveKey="0" flush>
+      <Accordion flush>
         <Accordion.Item eventKey="0">
           <Accordion.Header>What are love languages?</Accordion.Header>
           <Accordion.Body>
@@ -66,7 +66,7 @@ const Faq = () => {
           </Accordion.Body>
         </Accordion.Item>
         <Accordion.Item eventKey="3">
-          <Accordion.Header>How do I edit or delete my top 5?</Accordion.Header>
+          <Accordion.Header>How do I edit or delete my top 5 love languages?</Accordion.Header>
           <Accordion.Body>
             After adding your top 5 to our directory, visit your{" "}
             <a target="_blank" href="http://localhost:3000/?#/profile">
@@ -77,7 +77,7 @@ const Faq = () => {
           </Accordion.Body>
         </Accordion.Item>
         <Accordion.Item eventKey="4">
-          <Accordion.Header>How do I find someone's top 5?</Accordion.Header>
+          <Accordion.Header>How do I find someone's top 5 love languages?</Accordion.Header>
           <Accordion.Body>
             You must know the email address they used to register with our
             directory. Visit the{" "}
@@ -88,11 +88,11 @@ const Faq = () => {
           </Accordion.Body>
         </Accordion.Item>
         <Accordion.Item eventKey="5">
-          <Accordion.Header>Can anyone see my top 5?</Accordion.Header>
+          <Accordion.Header>Can anyone see my top 5 love languages?</Accordion.Header>
           <Accordion.Body>
             By registering an account with our directory, you agree to have your
             top 5 visible to anyone who may be able to access it (see "How do I
-            find someone's top 5?" in frequently asked questions)
+            find someone's top 5?")
           </Accordion.Body>
         </Accordion.Item>
       </Accordion>

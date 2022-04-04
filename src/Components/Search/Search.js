@@ -39,7 +39,7 @@ const Search = () => {
   const emailTopFiveList = emailTopFive.map((item) => (
     <div className="top-five-container">
       <Card style={{ width: "18rem" }}>
-        <Card.Header>{email} Top 5</Card.Header>
+        <Card.Header>{email}'s Top 5</Card.Header>
         <ListGroup variant="flush">
           <ListGroup.Item>1. {item.one}</ListGroup.Item>
           <ListGroup.Item>2. {item.two}</ListGroup.Item>
