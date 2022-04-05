@@ -7,3 +7,7 @@ Form {
 a:link {
   text-decoration: none;
 }
+
+.alert-heading.h4 {
+  line-height: 150%;
+}

@@ -1,7 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Vidaloka&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gravitas+One&family=Vidaloka&display=swap');
+
+
 .about-the-creator-heading {
-    font-family: 'Corben', cursive;
+    /* font-family: 'Corben', cursive; */
+    font-family: 'Gravitas One', cursive;
     color: black;
-    letter-spacing: 3px;
+    letter-spacing: 1px;
     position: relative;
     text-align: center;
     margin-top: 3%;
@@ -13,4 +18,5 @@
 .paragraph {
     margin-left: 5%;
     margin-right: 5%;
+    margin-bottom: 5%; 
 }

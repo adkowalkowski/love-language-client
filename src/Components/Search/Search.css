@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Corben:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Text:wght@100;200;300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gravitas+One&family=Vidaloka&display=swap');
 
 .landing-photo {
     position: relative;
@@ -29,8 +30,8 @@
     /* font-family: 'Big Shoulders Text', cursive; */
     letter-spacing: 1px;
     text-align: center;
-   z-index: 1;
-   max-width: 100%;
+    z-index: 1;
+    max-width: 100%;
 }
 
 .top-five-container {
@@ -49,9 +50,11 @@
 }
 
 .landing-page-logo {
-    font-family: 'Corben', cursive;
+    /* font-family: 'Corben', cursive; */
+    font-family: 'Gravitas One', cursive;
+    font-weight: bold;
     color: black;
-    letter-spacing: 3px;
+    letter-spacing: 1px;
     position: relative;
     text-align: center;
     z-index: 1;

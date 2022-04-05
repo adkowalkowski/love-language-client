@@ -92,7 +92,7 @@ const Faq = () => {
           <Accordion.Body>
             By registering an account with our directory, you agree to have your
             top 5 visible to anyone who may be able to access it (see "How do I
-            find someone's top 5?")
+            find someone's top 5 love languages?")
           </Accordion.Body>
         </Accordion.Item>
       </Accordion>
