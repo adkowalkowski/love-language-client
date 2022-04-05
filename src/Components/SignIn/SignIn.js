@@ -41,7 +41,6 @@ const SignIn = () => {
      axios
       .post("http://127.0.0.1:8000/sign-in/", userData)
       .then((response) => {
-        // setToken(response.data.user.token)
         setUser(response.data);
         localStorage.setItem('token', response.data.user.token)
         console.log(localStorage)
@@ -58,6 +57,7 @@ const SignIn = () => {
   console.log(tokenSignOut)
 
   // SIGN OUT
+
   const handleSignOut = () => {
     axios
       .delete("http://127.0.0.1:8000/sign-out/", {
