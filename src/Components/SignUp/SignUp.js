@@ -42,15 +42,12 @@ const SignUp = () => {
     axios
       .post("http://127.0.0.1:8000/sign-up/", userData)
       .then((response) => {
-        console.log(response.data);
         setNewUser(response.data);
         alert('Your account has been created')
         window.location.href = 'http://localhost:3000/?#/profile'
-        console.log(newUser);
       })
       .catch((err) => {
         alert('This email is already in use')
-        console.log(err);
       });
   };
 
