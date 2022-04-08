@@ -17,7 +17,6 @@ const Header = () => {
   // STORING TOKEN FROM LOCALSTORAGE FOR CONDITIONAL RENDERING
 
   const token = localStorage.token
-  console.log(token)
 
   // NAVBAR IF A USER IS SIGNED IN
 
