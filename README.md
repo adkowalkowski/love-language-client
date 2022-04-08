@@ -59,9 +59,9 @@ The user of this app values how love languages can impact relationships (both fr
 
 ## Models
 
+Brainstorming examples: 
 ```py
 
-# Example from lecture
 class User(AbstractBaseUser, PermissionsMixin):
     
     email = models.EmailField(max_length=255, unique=True)
@@ -87,7 +87,7 @@ class Love(models.Model):
         on_delete = models.CASCADE
     )
 
-    dunder method 
+    # dunder method 
 ```
 
 ## Routing Table
@@ -98,8 +98,8 @@ class Love(models.Model):
 | /sign-in | POST | User sign in |
 | /sign-out | DELETE | User sign out |
 | /change-password | PATCH | User change password |
-| /love-languages | POST | Add 5 love languages to user's account |
-| /love-languages | GET | View 5 love languages of user's account |
+| /love-languages | POST | Add 5 love languages to signed-in user's account |
+| /love-languages | GET | View 5 love languages of signed-in user |
 | /love-languages/<str:email> | GET | View 5 love languages of any user |
 | /love-languages/modify/<int:pk> | DELETE | Delete 5 love languages of signed-in user |
 | /love-languages/modify/<int:pk> | PUT | Update 5 love languages of signed-in user |
@@ -145,13 +145,13 @@ class Love(models.Model):
 | Total                |    N/A     |      40      |           |
 
 ## Additional Libraries
-React Bootstrap
-Formik (not currently in use, need to debug)
-Axios
+-React Bootstrap
+-Axios
+-Formik (not currently in use, need to debug)
 
 
 ## Code Snippet
-I have a fair amount of conditional rendering and I'm happy with how it turned out -- one example is on sign in. There is conditional rendering on the profile page: if a user is not signed in, it renders the sign in page. Once a user signs in, the sign in function reloads the page and the profile page will render.
+There is conditional rendering on the profile page: if a user is not signed in, it renders the sign in page. Once a user signs in, the sign in function reloads the page and the profile page will render.
 
 Sign in handler
 ```js
@@ -297,7 +297,7 @@ And the conditional rendering on the profile page:
 ```
 
 ## Issues and Resolutions
-My project has users add their top 5 love languages via a form. Since there are limited options and my model requires them to be entered verbatim, I'm going to use a select/dropdown form. Originally I had one state to store each of these values, but I couldn't get the selected dropdown data to update the state
+My project has users add their top 5 love languages via a form. Since there are limited options and my model requires them to be entered verbatim, I decided to use a select/dropdown form. Originally I had one state to store each of these values, but I couldn't get the selected dropdown data to update the state
 ```js
 const AddTopFive = () => {
 
@@ -395,7 +395,7 @@ const AddTopFive = () => {
 
 export default AddTopFive;
 ```
-I messed around trying to push into an array, but couldn't get that to work. I came up with a verbose workaround where I have five separate states and five separate handleSelect methods. It's still working as intended and that's a win.
+I messed around trying to push into an array, but couldn't get that to work. I came up with a verbose workaround where I have five separate states and five separate handleSelect methods. 
 ```js
 const [one, setOne] = useState("");
   const [two, setTwo] = useState("");
