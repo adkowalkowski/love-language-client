@@ -12,9 +12,8 @@ import { ListGroup } from "react-bootstrap";
 
 const AddTopFive = () => {
   // STORING TOKEN FROM SIGN IN TO A VARIABLE
-  
+
   const token = localStorage.token;
-  console.log(token);
 
   // STATES FOR ADDING A USER'S TOP 5
 
@@ -102,12 +101,10 @@ const AddTopFive = () => {
         setThree(response.data.three);
         setFour(response.data.four);
         setFive(response.data.five);
-        console.log(response.data);
         alert('Your top 5 has been added to the directory.')
       })
       .catch((err) => {
         alert('You have already submitted your top 5. Click "View Your Top 5" to make changes.')
-        console.log(err);
       });
   };
 
@@ -124,7 +121,6 @@ const AddTopFive = () => {
         setTopFive(res.data);
         localStorage.setItem('pk', res.data[0].id)
         setPk(localStorage.pk)
-        console.log(pk)
       })
       .catch((err) => {
         alert('You have not submitted your top 5')
@@ -141,7 +137,6 @@ const AddTopFive = () => {
         }
       })
       .then((res) => {
-        // setTopFive(res.data);   
         window.location.reload(true) 
         alert("Your top 5 was deleted")   
         
