@@ -12,12 +12,12 @@ Visit the [Love Language Directory](https://adkowalkowski.github.io/love-languag
 | Day   | Deliverable                          | Status     |
 | ----- | ------------------------------------ | ---------- |
 | Day 1 | Planning and Approval                | Complete |
-| Day 2 | Set up backend files and structure, test and deploy backend | Complete |
+| Day 2 | Set up backend files and structure, test and deploy backend | Incomplete |
 | Day 3 | Set up frontend files, connect frontend with backend, begin MVP attainment | Complete |
 | Day 4 | Attain MVP, debug MVP, begin styling | Complete |
 | Day 5 | Finalize CSS Styling and Responsive Design, begin postMVP if MVP attained | Complete |
 | Day 6 | Confirm finalized MVP & Bug Fixes | Complete |
-| Day 7 | Final Touches and deploying frontend | Incomplete |
+| Day 7 | Final Touches and deploying frontend | Complete |
 | Day 8 | Presentation | Complete |
 
 ## Project Description & Technologies
@@ -32,16 +32,14 @@ Taken from the official [5 love languages website](https://www.5lovelanguages.co
 
 The user of this app values how love languages can impact relationships (both friendship and romantic). However, it is very hard to keep track of your social network's love languages; it's even hard to remember your own love languages! Users of this application look for a centralized place where they can easily access their top 5 love languages as well as their social network's love languages.  
 
-## Wireframes
+## Wireframes 
 
 - [Mobile & Desktop](https://imgur.com/a/BzuPnNO)
-
-## React Architecture
 - [React Architecture](https://imgur.com/a/yGqyY6x) 
 
-### MVP/PostMVP
+## Minimum Viable Product (MVP) and Future Directions
 
-#### Minimum Viable Product (MVP) and Future Directions
+#### MVP
 
 - 2 models for data (User, Love)
 - Fully functional user authentication (token) (signup, signin, signout, changepassword, deleteaccount)
@@ -135,15 +133,16 @@ class Love(models.Model):
 | Search by user on front-end    |    H     |      5       |     10      |
 | Responsive Design                  |    H     |      4       |     5      |
 | CSS and Bootstrap                  |    H     |      4       |     4      |
-| Deploy frontend                    |    H     |      1       |           |
+| Deploy frontend                    |    H     |      1       |     0.5      |
 | Total                              |    N/A     | 49 |           |
 
-#### PostMVP (all in hrs unless otherwise stated)
+#### Future Directions (all in hrs unless otherwise stated)
 
 | Task            | Priority | Estimated Time | Actual Time |
 | -------------------- | :------: | :------------: | :---------: |
+| Change password feature on frontend              |    H    |      2       |           |
 | Social network features              |    M    |      40       |           |
-| Total                |    N/A     |      40      |           |
+| Total                |    N/A     |      42      |           |
 
 ## Additional Libraries
 - React Bootstrap
