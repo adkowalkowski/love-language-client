@@ -41,7 +41,7 @@ The user of this app values how love languages can impact relationships (both fr
 
 ### MVP/PostMVP
 
-#### MVP
+#### Minimum Viable Product (MVP) and Future Directions
 
 - 2 models for data (User, Love)
 - Fully functional user authentication (token) (signup, signin, signout, changepassword, deleteaccount)
@@ -53,8 +53,9 @@ The user of this app values how love languages can impact relationships (both fr
 - Use React bootstrap for design
 - Fully Deployed frontend and backend
 
-#### PostMVP
+#### Future Directions
 
+- Implement changePassword feature on the frontend (currently working as intended on the backend)
 - Social network system (add friends so you can see their love languages without searching)
 
 ## Models
