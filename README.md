@@ -20,7 +20,7 @@ Visit the [Love Language Directory](https://adkowalkowski.github.io/love-languag
 | Day 7 | Final Touches and deploying frontend | Incomplete |
 | Day 8 | Presentation | Complete |
 
-## Project Description
+## Project Description & Technologies
 
 Love language Directory is an app that allows users to create an account, and then add their top 5 love languages. Users can also search for other users and view their top 5 love languages. 
 
