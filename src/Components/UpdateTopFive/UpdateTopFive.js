@@ -13,12 +13,10 @@ import { FiMoreHorizontal } from "react-icons/fi";
 const UpdateTopFive = () => {
   // STORING TOKEN FROM SIGN IN TO A VARIABLE
   const token = localStorage.token;
-  console.log(token);
 
   // STORING PRIMARY KEY FROM HANDLEGET ON ADDTOPFIVE TO A VARIABLE
 
   const pk = localStorage.pk; 
-  console.log(pk)
 
   // STATES FOR UPDATING A USER'S TOP 5
 
@@ -87,12 +85,10 @@ const UpdateTopFive = () => {
         setThree(response.data.three);
         setFour(response.data.four);
         setFive(response.data.five);
-        console.log(response.data);
         window.location.href = 'http://localhost:3000/?#/profile'
         alert("Your top 5 has been updated");
       })
       .catch((err) => {
-        console.log(err);
       });
   };
 
