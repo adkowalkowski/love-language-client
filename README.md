@@ -82,7 +82,7 @@ class Love(models.Model):
     three: models.CharField(max_length=100)
     four: models.CharField(max_length=100)
     five: models.CharField(max_length=100)
-    owner = models.ForeignKey(
+    user = models.ForeignKey(
         get_user_model(),
         on_delete = models.CASCADE
     )
@@ -145,9 +145,9 @@ class Love(models.Model):
 | Total                |    N/A     |      40      |           |
 
 ## Additional Libraries
--React Bootstrap
--Axios
--Formik (not currently in use, need to debug)
+- React Bootstrap
+- Axios
+- Formik (not currently in used, need to debug)
 
 
 ## Code Snippet
