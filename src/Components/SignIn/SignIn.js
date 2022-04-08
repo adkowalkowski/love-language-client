@@ -43,18 +43,14 @@ const SignIn = () => {
       .then((response) => {
         setUser(response.data);
         localStorage.setItem('token', response.data.user.token)
-        console.log(localStorage)
-        console.log(user)
         window.location.reload(true)
       })
       .catch((err) => {
         alert('Incorrect login information')
-        console.log(err);
       });
   };
 
   const tokenSignOut = localStorage.token
-  console.log(tokenSignOut)
 
   // SIGN OUT
 
@@ -68,8 +64,6 @@ const SignIn = () => {
       .then((res) => {
         setUser(res.data);
         localStorage.setItem("token", "");
-        console.log(localStorage);
-        console.log(res.data);
         window.location.reload(true)
       });
   };
