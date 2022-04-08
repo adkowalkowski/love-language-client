@@ -14,7 +14,6 @@ const Search = () => {
   const [emailTopFive, setEmailTopFive] = useState([]);
   
   const token = localStorage.token;
-  console.log(token);
 
   const handleChange = (e) => {
     e.persist();
@@ -25,17 +24,15 @@ const Search = () => {
     axios
       .get(`http://127.0.0.1:8000/love-languages/${email}`)
       .then((res) => {
-        console.log(res.data)
         setEmailTopFive(res.data);       
       })
       .catch((err) => {
         alert('This email either does not exist in our directory or has not submitted a top 5')
-        console.log(err);
       });
   };
 
   // RENDERING DATA
-  // this currently isn't working because it isn't in an array? 
+  
   const emailTopFiveList = emailTopFive.map((item) => (
     <div className="top-five-container">
       <Card style={{ width: "18rem" }}>
