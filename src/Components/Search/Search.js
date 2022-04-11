@@ -22,7 +22,7 @@ const Search = () => {
   }
   const handleSubmit = () => {
     axios
-      .get(`http://127.0.0.1:8000/love-languages/${email}`)
+      .get(`https://love-language-server.herokuapp.com/love-languages/${email}`)
       .then((res) => {
         setEmailTopFive(res.data);       
       })

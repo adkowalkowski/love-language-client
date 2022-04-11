@@ -39,7 +39,7 @@ const SignIn = () => {
       password: user.password
     };
      axios
-      .post("http://127.0.0.1:8000/sign-in/", userData)
+      .post("https://love-language-server.herokuapp.com/sign-in/", userData)
       .then((response) => {
         setUser(response.data);
         localStorage.setItem('token', response.data.user.token)
@@ -56,7 +56,7 @@ const SignIn = () => {
 
   const handleSignOut = () => {
     axios
-      .delete("http://127.0.0.1:8000/sign-out/", {
+      .delete("https://love-language-server.herokuapp.com/sign-out/", {
         headers: {
           Authorization: `Token ${tokenSignOut}`,
         },

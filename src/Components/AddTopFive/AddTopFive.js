@@ -76,7 +76,7 @@ const AddTopFive = () => {
   };
 
   const handleUpdateClick = () => {
-    window.location.href = 'http://localhost:3000/?#/update-top-five'
+    window.location.href = 'http://adkowalkowski.github.io/love-language-client/?#/update-top-five'
   }
 
   // POST REQUEST FOR ADDING TOP 5 TO A USER'S ACCOUNT
@@ -90,7 +90,7 @@ const AddTopFive = () => {
       five: five,
     };
     axios
-      .post("http://127.0.0.1:8000/love-languages/", topFiveData, {
+      .post("https://love-language-server.herokuapp.com/love-languages/", topFiveData, {
         headers: {
           Authorization: `Token ${token}`,
         },
@@ -112,7 +112,7 @@ const AddTopFive = () => {
 
   const handleGet = () => {
     axios
-      .get("http://127.0.0.1:8000/love-languages/", {
+      .get("https://love-language-server.herokuapp.com/love-languages/", {
         headers: {
           Authorization: `Token ${token}`,
         },
@@ -131,7 +131,7 @@ const AddTopFive = () => {
 
   const handleDelete = () => {
     axios
-      .delete(`http://127.0.0.1:8000/love-languages/modify/${pk}`, {
+      .delete(`https://love-language-server.herokuapp.com/love-languages/modify/${pk}`, {
         headers: {
           Authorization: `Token ${token}`,
         }

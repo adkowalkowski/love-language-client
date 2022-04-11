@@ -48,11 +48,11 @@ const Faq = () => {
           </Accordion.Header>
           <Accordion.Body>
             To add your top 5 into our directory, you must have an account.{" "}
-            <a target="_blank" href="http://localhost:3000/?#/sign-up">
+            <a target="_blank" href="https://adkowalkowski.github.io/love-language-client/?#/sign-up">
               Register here
             </a>
             . Once your account is created, visit your{" "}
-            <a target="_blank" href="http://localhost:3000/?#/profile">
+            <a target="_blank" href="https://adkowalkowski.github.io/love-language-client/?#/profile">
               profile
             </a>
             . There you can add your top 5 based off of the{" "}
@@ -69,7 +69,7 @@ const Faq = () => {
           <Accordion.Header>How do I edit or delete my top 5 love languages?</Accordion.Header>
           <Accordion.Body>
             After adding your top 5 to our directory, visit your{" "}
-            <a target="_blank" href="http://localhost:3000/?#/profile">
+            <a target="_blank" href="https://adkowalkowski.github.io/love-language-client/?#/profile">
               profile
             </a>
             . There you can view your top 5. Options will then appear to edit or
@@ -81,7 +81,7 @@ const Faq = () => {
           <Accordion.Body>
             You must know the email address they used to register with our
             directory. Visit the{" "}
-            <a target="_blank" href="http://localhost:3000/?#/">
+            <a target="_blank" href="https://adkowalkowski.github.io/love-language-client/?#/">
               home page
             </a>{" "}
             and enter their email to view their top 5.

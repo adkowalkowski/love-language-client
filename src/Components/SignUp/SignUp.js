@@ -40,11 +40,11 @@ const SignUp = () => {
       password: newUser.password
     };
     axios
-      .post("http://127.0.0.1:8000/sign-up/", userData)
+      .post("https://love-language-server.herokuapp.com/sign-up/", userData)
       .then((response) => {
         setNewUser(response.data);
         alert('Your account has been created')
-        window.location.href = 'http://localhost:3000/?#/profile'
+        window.location.href = 'https://adkowalkowski.github.io/love-language-client/?#/profile'
       })
       .catch((err) => {
         alert('This email is already in use')
@@ -71,7 +71,7 @@ const SignUp = () => {
   return (
     <div>
       <Alert variant="success" onClose={() => setShow(false)} >
-        <Alert.Heading>Please review our <a target="_blank" href="http://localhost:3000/?#/about">
+        <Alert.Heading>Please review our <a target="_blank" href="https://adkowalkowski.github.io/love-language-client/?#/about">
         frequently asked questions
           </a> before continuing. <br></br>Register an account with the love language directory using the form below.</Alert.Heading>
       </Alert>

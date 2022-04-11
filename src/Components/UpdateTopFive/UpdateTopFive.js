@@ -74,7 +74,7 @@ const UpdateTopFive = () => {
       five: five,
     };
     axios
-      .put(`http://127.0.0.1:8000/love-languages/modify/${pk}`, topFiveData, {
+      .put(`https://love-language-server.herokuapp.com/modify/${pk}`, topFiveData, {
         headers: {
           Authorization: `Token ${token}`,
         },
@@ -85,7 +85,7 @@ const UpdateTopFive = () => {
         setThree(response.data.three);
         setFour(response.data.four);
         setFive(response.data.five);
-        window.location.href = 'http://localhost:3000/?#/profile'
+        window.location.href = 'https://adkowalkowski.github.io/love-language-client/?#/profile'
         alert("Your top 5 has been updated");
       })
       .catch((err) => {
