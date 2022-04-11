@@ -85,8 +85,8 @@ const UpdateTopFive = () => {
         setThree(response.data.three);
         setFour(response.data.four);
         setFive(response.data.five);
-        window.location.href = 'https://adkowalkowski.github.io/love-language-client/#/profile'
         alert("Your top 5 has been updated");
+        window.location.href = 'https://adkowalkowski.github.io/love-language-client/#/profile'
       })
       .catch((err) => {
       });
