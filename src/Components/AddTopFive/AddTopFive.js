@@ -76,7 +76,7 @@ const AddTopFive = () => {
   };
 
   const handleUpdateClick = () => {
-    window.location.href = 'http://adkowalkowski.github.io/love-language-client/?#/update-top-five'
+    window.location.href = 'http://adkowalkowski.github.io/love-language-client/#/update-top-five'
   }
 
   // POST REQUEST FOR ADDING TOP 5 TO A USER'S ACCOUNT
