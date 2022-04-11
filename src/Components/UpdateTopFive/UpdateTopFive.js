@@ -94,7 +94,7 @@ const UpdateTopFive = () => {
 
   return (
     <div>
-      <Form onSubmit={handleTopFiveSubmit}>
+      <Form >
         <Form.Label>
           To edit your top 5 love languages, fill out the form
           below
@@ -154,7 +154,7 @@ const UpdateTopFive = () => {
           <option>Receiving Gifts</option>
           <option>Physical Touch</option>
         </Form.Select>
-        <Button className="submit-button" variant="secondary" type="submit">
+        <Button className="submit-button" variant="secondary" type="submit" onClick={handleTopFiveSubmit}>
           Edit Your Top 5
         </Button>
       </Form>
