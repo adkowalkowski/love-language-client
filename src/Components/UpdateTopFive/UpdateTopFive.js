@@ -28,35 +28,35 @@ const UpdateTopFive = () => {
 
   // HANDLESELECT FOR UPDATING A USER'S TOP 5
 
-  const handleOneSelect = (e) => {
+  const handleOneUpdate = (e) => {
     e.preventDefault();
     e.persist();
     const selectedValue = e.target.value;
     setOne(selectedValue);
   };
 
-  const handleTwoSelect = (e) => {
+  const handleTwoUpdate = (e) => {
     e.preventDefault();
     e.persist();
     const selectedValue = e.target.value;
     setTwo(selectedValue);
   };
 
-  const handleThreeSelect = (e) => {
+  const handleThreeUpdate = (e) => {
     e.preventDefault();
     e.persist();
     const selectedValue = e.target.value;
     setThree(selectedValue);
   };
 
-  const handleFourSelect = (e) => {
+  const handleFourUpdate = (e) => {
     e.preventDefault();
     e.persist();
     const selectedValue = e.target.value;
     setFour(selectedValue);
   };
 
-  const handleFiveSelect = (e) => {
+  const handleFiveUpdate = (e) => {
     e.preventDefault();
     e.persist();
     const selectedValue = e.target.value;
@@ -98,7 +98,7 @@ const UpdateTopFive = () => {
           below
         </Form.Label>
         <Form.Select
-          onChange={handleOneSelect}
+          onChange={handleOneUpdate}
           aria-label="Default select example"
         >
           <option>Number One</option>
@@ -109,7 +109,7 @@ const UpdateTopFive = () => {
           <option>Physical Touch</option>
         </Form.Select>
         <Form.Select
-          onChange={handleTwoSelect}
+          onChange={handleTwoUpdate}
           aria-label="Default select example"
         >
           <option>Number Two</option>
@@ -120,7 +120,7 @@ const UpdateTopFive = () => {
           <option>Physical Touch</option>
         </Form.Select>
         <Form.Select
-          onChange={handleThreeSelect}
+          onChange={handleThreeUpdate}
           aria-label="Default select example"
         >
           <option>Number Three</option>
@@ -131,7 +131,7 @@ const UpdateTopFive = () => {
           <option>Physical Touch</option>
         </Form.Select>
         <Form.Select
-          onChange={handleFourSelect}
+          onChange={handleFourUpdate}
           aria-label="Default select example"
         >
           <option>Number Four</option>
@@ -142,7 +142,7 @@ const UpdateTopFive = () => {
           <option>Physical Touch</option>
         </Form.Select>
         <Form.Select
-          onChange={handleFiveSelect}
+          onChange={handleFiveUpdate}
           aria-label="Default select example"
         >
           <option>Number Five</option>
