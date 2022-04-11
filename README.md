@@ -6,23 +6,9 @@ This repository is for the frontend, visit the [backend repository](https://gith
 ## Deployed Link
 Visit the [Love Language Directory](https://adkowalkowski.github.io/love-language-client/)
 
-
-## Project Schedule
-
-| Day   | Deliverable                          | Status     |
-| ----- | ------------------------------------ | ---------- |
-| Day 1 | Planning and Approval                | Complete |
-| Day 2 | Set up backend files and structure, test and deploy backend | Incomplete |
-| Day 3 | Set up frontend files, connect frontend with backend, begin MVP attainment | Complete |
-| Day 4 | Attain MVP, debug MVP, begin styling | Complete |
-| Day 5 | Finalize CSS Styling and Responsive Design, begin postMVP if MVP attained | Complete |
-| Day 6 | Confirm finalized MVP & Bug Fixes | Complete |
-| Day 7 | Final Touches and deploying frontend | Complete |
-| Day 8 | Presentation | Complete |
-
 ## Project Description & Technologies
 
-Love language Directory is an app that allows users to create an account, and then add their top 5 love languages. Users can also search for other users and view their top 5 love languages. 
+Love Language Directory is an app that allows users to create an account, and then add their top 5 love languages. Users can also search for other users and view their top 5 love languages. 
 
 This app will include a backend database using PostgreSQL and Django and a frontend web application using React.js.
 
@@ -54,6 +40,7 @@ The user of this app values how love languages can impact relationships (both fr
 #### Future Directions
 
 - Implement changePassword feature on the frontend (currently working as intended on the backend)
+- Error handling so each selection on the dropdown has to be unique
 - Social network system (add friends so you can see their love languages without searching)
 
 ## Models
@@ -117,6 +104,19 @@ class Love(models.Model):
 | FAQ | Frequently asked questions |
 | Header | Logo and Menu |
 
+## Project Schedule
+
+| Day   | Deliverable                          | Status     |
+| ----- | ------------------------------------ | ---------- |
+| Day 1 | Planning and Approval                | Complete |
+| Day 2 | Set up backend files and structure, test and deploy backend | Incomplete |
+| Day 3 | Set up frontend files, connect frontend with backend, begin MVP attainment | Complete |
+| Day 4 | Attain MVP, debug MVP, begin styling | Complete |
+| Day 5 | Finalize CSS Styling and Responsive Design, begin postMVP if MVP attained | Complete |
+| Day 6 | Confirm finalized MVP & Bug Fixes | Complete |
+| Day 7 | Final Touches and deploying frontend | Complete |
+| Day 8 | Presentation | Complete |
+
 #### MVP (all in hrs unless otherwise stated)
 
 | Task                          | Priority | Estimated Time | Actual Time |
@@ -141,8 +141,9 @@ class Love(models.Model):
 | Task            | Priority | Estimated Time | Actual Time |
 | -------------------- | :------: | :------------: | :---------: |
 | Change password feature on frontend              |    H    |      2       |           |
+| Error handling for form submission and form editing              |    L    |      2       |           |
 | Social network features              |    M    |      40       |           |
-| Total                |    N/A     |      42      |           |
+| Total                |    N/A     |      44      |           |
 
 ## Additional Libraries
 - React Bootstrap
