@@ -65,7 +65,7 @@ const UpdateTopFive = () => {
 
   // POST REQUEST FOR ADDING TOP 5 TO A USER'S ACCOUNT
 
-  const handleTopFiveSubmit = () => {
+  const handleTopFiveUpdate = () => {
     const topFiveData = {
       one: one,
       two: two,
@@ -86,15 +86,13 @@ const UpdateTopFive = () => {
         setFour(response.data.four);
         setFive(response.data.five);
         alert("Your top 5 has been updated");
-        window.location.href = 'https://adkowalkowski.github.io/love-language-client/#/profile'
+        window.location.href = 'https://adkowalkowski.github.io/love-language-client/#/profile';
       })
-      .catch((err) => {
-      });
   };
 
   return (
     <div>
-      <Form onSubmit={handleTopFiveSubmit}>
+      <Form onSubmit={handleTopFiveUpdate}>
         <Form.Label>
           To edit your top 5 love languages, fill out the form
           below
