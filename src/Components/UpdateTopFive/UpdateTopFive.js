@@ -74,7 +74,7 @@ const UpdateTopFive = () => {
       five: five,
     };
     axios
-      .put(`https://love-language-server.herokuapp.com/modify/${pk}`, topFiveData, {
+      .put(`https://love-language-server.herokuapp.com/love-languages/modify/${pk}`, topFiveData, {
         headers: {
           Authorization: `Token ${token}`,
         },
@@ -94,7 +94,7 @@ const UpdateTopFive = () => {
 
   return (
     <div>
-      <Form >
+      <Form onSubmit={handleTopFiveSubmit}>
         <Form.Label>
           To edit your top 5 love languages, fill out the form
           below
@@ -154,7 +154,7 @@ const UpdateTopFive = () => {
           <option>Receiving Gifts</option>
           <option>Physical Touch</option>
         </Form.Select>
-        <Button className="submit-button" variant="secondary" type="submit" onClick={handleTopFiveSubmit}>
+        <Button className="submit-button" variant="secondary" type="submit">
           Edit Your Top 5
         </Button>
       </Form>
