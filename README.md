@@ -109,7 +109,7 @@ class Love(models.Model):
 | Day   | Deliverable                          | Status     |
 | ----- | ------------------------------------ | ---------- |
 | Day 1 | Planning and Approval                | Complete |
-| Day 2 | Set up backend files and structure, test and deploy backend | Incomplete |
+| Day 2 | Set up backend files and structure, test and deploy backend | Complete |
 | Day 3 | Set up frontend files, connect frontend with backend, begin MVP attainment | Complete |
 | Day 4 | Attain MVP, debug MVP, begin styling | Complete |
 | Day 5 | Finalize CSS Styling and Responsive Design, begin postMVP if MVP attained | Complete |
