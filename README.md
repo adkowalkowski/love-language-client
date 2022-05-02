@@ -43,114 +43,6 @@ The user of this app values how love languages can impact relationships (both fr
 - Error handling so each selection on the dropdown has to be unique
 - Social network system (add friends so you can see their love languages without searching)
 
-## Models
-
-Brainstorming examples: 
-```py
-
-class User(AbstractBaseUser, PermissionsMixin):
-    
-    email = models.EmailField(max_length=255, unique=True)
-    is_active = models.BooleanField(default=True)
-    is_staff = models.BooleanField(default=False)
-
-    USERNAME_FIELD = 'email'
-
-    objects = UserManager()
-
-    def __str__(self):
-        """Return string representation of the user"""
-        return self.email
-
-class Love(models.Model):
-    one: models.CharField(max_length=100)
-    two: models.CharField(max_length=100)
-    three: models.CharField(max_length=100)
-    four: models.CharField(max_length=100)
-    five: models.CharField(max_length=100)
-    user = models.ForeignKey(
-        get_user_model(),
-        on_delete = models.CASCADE
-    )
-
-    # dunder method 
-```
-
-## Routing Table
-
-| **URL**     | **HTTP Verb** | **Description** |
-| ----------- | ------------- | ---------------- |
-| /sign-up | POST | Sign up a new user |
-| /sign-in | POST | User sign in |
-| /sign-out | DELETE | User sign out |
-| /change-password | PATCH | User change password |
-| /love-languages | POST | Add 5 love languages to signed-in user's account |
-| /love-languages | GET | View 5 love languages of signed-in user |
-| /love-languages/<str:email> | GET | View 5 love languages of any user |
-| /love-languages/modify/<int:pk> | DELETE | Delete 5 love languages of signed-in user |
-| /love-languages/modify/<int:pk> | PUT | Update 5 love languages of signed-in user |
-
-## Functional Components 
-
-| Component                      |                   Description                    |
-| ------------------------------ | :----------------------------------------------: |
-| Home | Landing Page for a signed-in user, can submit/edit their top5 |
-| SignUp | Page to signup a new user |
-| SignIn |  Page to signin a user  |
-| AddForm |  Component that holds the form to add a user's top5 |
-| UpdateForm |  Component that holds the form to update a user's top5 |
-| Search | Page with a searchbox and then will return that user's top5 if the user is found |
-| About | About the site and creator |
-| FAQ | Frequently asked questions |
-| Header | Logo and Menu |
-
-## Project Schedule
-
-| Day   | Deliverable                          | Status     |
-| ----- | ------------------------------------ | ---------- |
-| Day 1 | Planning and Approval                | Complete |
-| Day 2 | Set up backend files and structure, test and deploy backend | Complete |
-| Day 3 | Set up frontend files, connect frontend with backend, begin MVP attainment | Complete |
-| Day 4 | Attain MVP, debug MVP, begin styling | Complete |
-| Day 5 | Finalize CSS Styling and Responsive Design, begin postMVP if MVP attained | Complete |
-| Day 6 | Confirm finalized MVP & Bug Fixes | Complete |
-| Day 7 | Final Touches and deploying frontend | Complete |
-| Day 8 | Presentation | Complete |
-
-#### MVP (all in hrs unless otherwise stated)
-
-| Task                          | Priority | Estimated Time | Actual Time |
-| ---------------------------------- | :------: | :------------: | :---------: |
-| Installing and Setup for backend   |    H     |      1       |      1     |
-| Models                             |    H     |      4       |      4     |
-| CRUD Routes and testing on Postman |    H     |      5       |      5    |
-| Deploying backend                  |    H     |     2      |           |
-| Creating React App                 |    H     |      1       |      1     |
-| Add Routes                         |    H     |      2       |     2      |
-| Create Components                  |    H     |      5       |     2      |
-| Connect user authentication on front-end                  |    H     |      10       |     10      |
-| Fetch and test data on frontend    |    H     |      5       |      10     |
-| Search by user on front-end    |    H     |      5       |     10      |
-| Responsive Design                  |    H     |      4       |     5      |
-| CSS and Bootstrap                  |    H     |      4       |     4      |
-| Deploy frontend                    |    H     |      1       |     0.5      |
-| Total                              |    N/A     | 49 |           |
-
-#### Future Directions (all in hrs unless otherwise stated)
-
-| Task            | Priority | Estimated Time | Actual Time |
-| -------------------- | :------: | :------------: | :---------: |
-| Change password feature on frontend              |    H    |      2       |           |
-| Error handling for form submission and form editing              |    L    |      2       |           |
-| Social network features              |    M    |      40       |           |
-| Total                |    N/A     |      44      |           |
-
-## Additional Libraries
-- React Bootstrap
-- Axios
-- Formik (not currently in used, need to debug)
-
-
 ## Code Snippet
 There is conditional rendering on the profile page: if a user is not signed in, it renders the sign in page. Once a user signs in, the sign in function reloads the page and the profile page will render.
 
@@ -296,6 +188,65 @@ And the conditional rendering on the profile page:
     );
   }
 ```
+## Functional Components 
+
+| Component                      |                   Description                    |
+| ------------------------------ | :----------------------------------------------: |
+| Home | Landing Page for a signed-in user, can submit/edit their top5 |
+| SignUp | Page to signup a new user |
+| SignIn |  Page to signin a user  |
+| AddForm |  Component that holds the form to add a user's top5 |
+| UpdateForm |  Component that holds the form to update a user's top5 |
+| Search | Page with a searchbox and then will return that user's top5 if the user is found |
+| About | About the site and creator |
+| FAQ | Frequently asked questions |
+| Header | Logo and Menu |
+
+## Project Schedule
+
+| Day   | Deliverable                          | Status     |
+| ----- | ------------------------------------ | ---------- |
+| Day 1 | Planning and Approval                | Complete |
+| Day 2 | Set up backend files and structure, test and deploy backend | Complete |
+| Day 3 | Set up frontend files, connect frontend with backend, begin MVP attainment | Complete |
+| Day 4 | Attain MVP, debug MVP, begin styling | Complete |
+| Day 5 | Finalize CSS Styling and Responsive Design, begin postMVP if MVP attained | Complete |
+| Day 6 | Confirm finalized MVP & Bug Fixes | Complete |
+| Day 7 | Final Touches and deploying frontend | Complete |
+| Day 8 | Presentation | Complete |
+
+#### MVP (all in hrs unless otherwise stated)
+
+| Task                          | Priority | Estimated Time | Actual Time |
+| ---------------------------------- | :------: | :------------: | :---------: |
+| Installing and Setup for backend   |    H     |      1       |      1     |
+| Models                             |    H     |      4       |      4     |
+| CRUD Routes and testing on Postman |    H     |      5       |      5    |
+| Deploying backend                  |    H     |     2      |      1     |
+| Creating React App                 |    H     |      1       |      1     |
+| Add Routes                         |    H     |      2       |     2      |
+| Create Components                  |    H     |      5       |     2      |
+| Connect user authentication on front-end                  |    H     |      10       |     10      |
+| Fetch and test data on frontend    |    H     |      5       |      10     |
+| Search by user on front-end    |    H     |      5       |     10      |
+| Responsive Design                  |    H     |      4       |     5      |
+| CSS and Bootstrap                  |    H     |      4       |     4      |
+| Deploy frontend                    |    H     |      1       |     0.5      |
+| Total                              |    N/A     | 49 |    55.5       |
+
+#### Future Directions (all in hrs unless otherwise stated)
+
+| Task            | Priority | Estimated Time | Actual Time |
+| -------------------- | :------: | :------------: | :---------: |
+| Change password feature on frontend              |    H    |      2       |           |
+| Error handling for form submission and form editing              |    L    |      2       |           |
+| Social network features              |    M    |      40       |           |
+| Total                |    N/A     |      44      |           |
+
+## Additional Libraries
+- React Bootstrap
+- Axios
+- Formik (not currently in use, need to debug)
 
 ## Issues and Resolutions
 My project has users add their top 5 love languages via a form. Since there are limited options and my model requires them to be entered verbatim, I decided to use a select/dropdown form. Originally I had one state to store each of these values, but I couldn't get the selected dropdown data to update the state
